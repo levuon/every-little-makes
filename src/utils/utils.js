@@ -1,5 +1,4 @@
 
-
 // 检验质数
 function isPrime( n ) {
 	return !(/^.?$|^(..+?)\1+$/).test( '1'.repeat( n ) )
@@ -9,7 +8,6 @@ function isPrime( n ) {
 function randomColor() {
     return `#${ Math.floor( Math.random() * (2 << 23) ).toString( 16 ) }`
 }
-
 
 function after(n, func) {
   if (typeof func != 'function') {

@@ -8,7 +8,6 @@ const composePromise = ( ...fns ) => params => fns.reduce( ( p, n ) => p.then( r
 const listPormise = (...list) => promiseFn => list.reduce( (p, n) => p.then( () => promiseFn( n )), Promise.resolve() )
 
 
-
 module.exports = {
     composeFn,
     composePromise,
