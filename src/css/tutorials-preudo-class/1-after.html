@@ -1,0 +1,258 @@
+<!-- ::after is a generated content element that represents a styleable abstract last child of the respective element. -->
+
+<!--
+  The content inserted using ::after is inserted
+  after other content inside the element
+  and is displayed inline by default.
+  The value of the content is specified using the content property.
+-->
+
+<!-- ATTENTION:
+  0: ::after display 默认 inline.
+
+  1: Images insert using preudo-elements(伪元素) cannot be resized, they are insert as it
+     图片通过伪元素插入是不能 改变大小，他们本来多大，插入的时候就是多大
+     eg. .external::after
+
+  2: the content inserted using a pseudo-element is not inserted into the DOM
+     通过伪元素插入到content是不会插入到DOM树里. 在devTool里不会在content看到其内容
+
+  3: content 的内容可以为以下
+     a: image, icon, string, Escaping the unicode.
+     b: counter.
+        eg. 下面 h3
+     c: empty (Empty pseudo-elements are useful for clearing floats in an element)
+        eg. http://nicolasgallagher.com/micro-clearfix-hack/
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta charset="UTF-8">
+</head>
+
+<style media="screen">
+    body {
+      background-color: #F5F5F5;
+      color: #555;
+      font-size: 1.1em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+
+    .element {
+        width: 250px;
+        height: 250px;
+        background-color: #009966;
+        opacity: .8;
+        position: relative;
+        margin: 100px auto;
+    }
+
+    .element::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 250px;
+        height: 250px;
+        background-color: #009966;
+        opacity: .8;
+        transform: rotateZ(45deg);
+    }
+
+    .external::after {
+        /*display: block;*/
+        /* default: inline */
+        content: url(../img/external-link.png);
+        /*content: '\201C'; */
+        /* also counts as a string. Escaping the unicode; renders it as a character  */
+        /*content: 'to be continued';*/
+        /* a string */
+        /*content: url(../img/test.png);*/
+        padding-left: 5px;
+        /* create some space between the image and the content before it */
+    }
+
+
+    h3 {
+        counter-increment: my-counter;
+    }
+
+    h3::after {
+        content: ". " counter(my-counter);
+    }
+
+    .container {
+        background-color: #DCE6BE;
+    }
+
+    .clear-float::before,
+    .clear-float::after {
+        content: "";
+        display: table;
+    }
+
+    .clear-float::after {
+        clear: both;
+    }
+
+    .clear-float {
+        zoom: 1;
+    }
+
+    .div-green {
+        display: inline;
+        margin: 10px;
+        background-color: green;
+        width: 80px;
+        height: 20px
+    }
+
+
+    a[href]::after {
+        color: grey;
+        content: " (" attr(href) ")";
+    }
+
+    /*last*/
+    hr {
+      margin: 50px 0;
+    }
+    .container {
+      margin: 40px auto;
+      max-width: 700px;
+      text-align: center;
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+      list-style: none;
+      padding-left: 0;
+    }
+    .menu li {
+      float: left;
+      padding: .65em 1em;
+      border: 1px solid #eee;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      position: relative;
+    }
+
+    .menu li:hover {
+      background-color: deepPink;
+    }
+
+    li ul {
+      position: absolute;
+      top: 100%;
+      left: 0%;
+      width: 150px;
+      display: none;
+      z-index: 1;
+    }
+
+    li ul li {
+      width: 100%;
+    }
+
+    li:hover ul {
+      display: block;
+    }
+
+    li::after, li::before {
+      display: inline-block;
+	    opacity: 0;
+      transition: transform .3s, opacity .3s;
+    }
+    li::before {
+      content: "[";
+      margin-right: 10px;
+      transform: translateX(20px);
+    }
+    li::after {
+      content: "]";
+      margin-left: 10px;
+      transform: translateX(-20px);
+    }
+
+    li:hover::after, li:hover::before {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+
+
+    .has-submenu::after {
+      content: "\25bc";
+      font-size: .7em;
+      padding-left: 5px;
+      vertical-align: middle;
+    }
+
+    .has-submenu:hover::after {
+      content: "\25b2";
+    }
+</style>
+
+<body>
+
+    <!-- <div class="element"></div> -->
+    <div>
+        Let's <a href="http://movethewebforward.org/" class="external">Move The Web Forward</a> together!
+    </div>
+    <!-- counter start-->
+    <h3>aaaa </h3>
+    <h3>bbbb </h3>
+    <h3>cccc </h3>
+    <!-- counter end -->
+
+    <!-- empty-content start -->
+    <!--
+    <div>
+      <div class="container">
+        <div class="div-green" style="float: left">div2-no-1</div>
+        <div class="div-green" style="float: left">div2-no-2</div>
+      </div>
+    </div>
+    -->
+
+    <div>
+        <div class="container clear-float">
+            <div class="div-green" style="float: left">div2-1</div>
+            <div class="div-green" style="float: left">div2-2</div>
+        </div>
+    </div>
+    <!-- empty-content end -->
+
+
+    <a href="hahahaha 我是href">check me</a>
+
+    <div class="container">
+      <ul class="menu">
+        <li>Home</li>
+        <li>Blog</li>
+        <li class="has-submenu">About
+          <ul>
+            <li>Who we Are</li>
+            <li>What We Do</li>
+          </ul>
+        </li>
+        <li>Pricing</li>
+        <li class="has-submenu">Contact
+          <ul>
+            <li>Email</li>
+            <li>Phone</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+</body>
+</html>

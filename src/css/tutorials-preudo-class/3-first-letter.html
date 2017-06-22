@@ -1,0 +1,46 @@
+
+<!--
+  Only a subset of CSS properties can be used to style ::first-letter, these properties are:
+
+  1: Font Properties: font, font-style, font-variant, font-weight, font-size, line-height, and font-family.
+  2: text-decoration, text-transform, letter-spacing, word-spacing (when appropriate), float, vertical-align (only if float is none), and color.
+  3: Margin properties: margin, margin-top, margin-right, margin-bottom, and margin-left.
+  4: Padding properties: padding, padding-top, padding-right, padding-bottom, and padding-left
+  5: Border properties: border, border-width, border-style, border-color, and the corresponding longhand properties for each of these properties.
+  6: Background properties: background, background-color, background-image, background-position, background-repeat, background-size, and background-attachment.
+-->
+
+
+<style media="screen">
+  body {
+    background-color: rgb(81,75,113)
+  }
+  p.note::before {
+    content: 'Note: ';
+    color: white
+  }
+
+  p.note::first-letter {
+    color: black
+  }
+
+  div::first-letter {
+    content: "";
+    color: white
+  }
+</style>
+
+
+<p class="note">hahaha </p>
+<p>
+    "Drawing from our own ignorance, and from the united ignorance of others (most freely and generously bestowed), we mapped out the details of the campaign with glibness and ease. At Vardö we were to purchase furs to wear and horses to ride."
+</p>
+
+<div>
+    <p style="display: inline-block">
+        Hello
+        <br>
+        Goodbye
+    </p>
+    etcetera
+</div>

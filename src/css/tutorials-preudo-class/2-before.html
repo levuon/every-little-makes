@@ -1,0 +1,78 @@
+
+<style media="screen">
+  .container {
+    margin: 40px auto;
+    max-width: 700px;
+  }
+
+  blockquote::before {
+    content: "\201C";
+    color: deepPink;
+    font-size: 3em;
+    position: relative;
+    top: 20px;
+  }
+
+  p.note {
+      font-style: italic;
+      color: grey;
+  }
+
+  p.note::before {
+      content: "Note: ";
+      color: red;
+  }
+  .element {
+    width: 250px;
+    height: 250px;
+    background-color: #009966;
+    opacity: .8;
+    position: relative;
+    margin: 100px auto;
+  }
+
+  .element:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 250px;
+    height: 250px;
+    background-color: #009966;
+    /*opacity: 0;*/
+    transform: rotateZ(0deg);
+    transition: transform .3s, opacity .3s;
+  }
+
+  .element:hover::before {
+    opacity: .8;
+    transform: rotateZ(45deg) .3s;
+  }
+
+
+</style>
+<style media="screen">
+  /*用法*/ /* an image, for example, an icon */
+  /*.element::before {
+    content: url(path/to/image.png);
+  }*/
+  /* a string */
+  /*.element::before {
+      content: "Note: ";
+  }*/
+  /* also counts as a string. Escaping the Unicode renders it as a character */
+  /*.element::before {
+      content: "\201C";
+  }*/
+</style>
+
+<div class="element"></div>
+
+
+<div class="container">
+  <blockquote>
+      Your present circumstances don't determine where you can go; they merely determine where you start.-Nido Qubein
+  </blockquote>
+  <p class="note">
+    123
+  </p>
+</div>
