@@ -20,8 +20,23 @@ function after(n, func) {
   }
 }
 
+const once = fn => {
+	let done = false;
+	return () => {
+		return done ? void 0 : ((done = true, fn.apply(this, arguments)))
+	}
+}
+
+const excuteTimes = n => fn => {
+	return () => {
+		return n === 0 ? void 0 : (n--, fn.apply(this, arguments))
+	}
+}
+
 module.exports = {
     isPrime,
     randomColor,
-    after
+    after,
+		once,
+		excuteTimes
 }

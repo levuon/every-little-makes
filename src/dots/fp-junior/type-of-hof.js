@@ -1,5 +1,5 @@
 const _ = require('lodash');
-
+const { once, excuteTimes } = require('../../utils/utils')
 // ******************************************************************
 // **************  types of high order functions; *******************
 
@@ -65,3 +65,20 @@ console.log(doubleAddOne(2));
 
 //cook and eat
 // var cookAndEat = compose(eat, cook);
+
+let askOnce = once(function() {
+  return `hahaha`
+});
+
+let askN = excuteTimes(5)(function(){
+  return `yeahyeah`
+})
+console.log(askOnce());
+console.log(askOnce());
+console.log(askOnce());
+console.log(askN());
+console.log(askN());
+console.log(askN());
+console.log(askN());
+console.log(askN());
+console.log(askN());
