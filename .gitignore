@@ -5,3 +5,4 @@ node_modules/
 *.iml
 .git
 doc/mac.md
+sh/11coc
