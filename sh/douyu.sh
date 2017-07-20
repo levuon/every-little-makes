@@ -1,5 +1,4 @@
 #!/bin/bash
-# # Program: ts video more download and merge
 
 # URL=""
 # wget ${URL}/65189_500{0..165}.ts &
@@ -39,20 +38,7 @@ done
 
 rm ${PREFIX}*
 
-# ffmpeg -i combine.ts -acodec copy -vcodec copy -bsf aac_adtstoasc $NAME.mp4
 ffmpeg -i combine.ts -c:v libx264 -c:a copy -bsf:a aac_adtstoasc $NAME.mp4
-# rm combined.ts
+rm combined.ts
 
 echo '######## END'
-
-# 将 ts 转 mp4
-# ffmpeg -i combine.ts -acodec copy -vcodec copy -bsf aac_adtstoasc output.mp4
-
-
-# read -p "URL to check: " URL
-# if curl --output /dev/null --silent --head --fail "$URL"; then
-#   printf '%s\n' "$URL exist"
-# else
-#   printf '%s\n' "$URL does not exist"
-# fi
-# read -p "URL to check: " URL
