@@ -5,7 +5,6 @@ HOST_API='https://egghead.io/api/v1/lessons/'
 
 read -p "please input vedoi url >>  " URL
 echo "URL: $URL"
-URL='https://egghead.io/lessons/postgresql-find-postgres-data-that-doesn-t-match-join-conditions-with-full-outer-join'
 IFS='/' read -r -a array <<< "$URL"
 
 LESSON=${array[@]: -1:1}
