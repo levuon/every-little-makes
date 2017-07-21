@@ -10,7 +10,7 @@ NAME_JSON=""
 FAIL_ARRAY=()
 
 read -p "please input vedoi url >>  " URL
-echo "INPUPT URL:  $URL"
+echo "INPUPT URL:  $URL" >>log.txt 2>> error.txt
 
 URL="https://egghead.io/lessons/postgresql-find-related-data-with-inner-join-in-postgres"
 
@@ -23,8 +23,8 @@ LESSON=`echo $URL | rev | cut -d / -f 1 | rev`
 
 
 
-echo "lesson_name: $LESSON"
-echo "API: $HOST_API$LESSON/next_up"
+echo "lesson_name: $LESSON" >>log.txt 2>> error.txt
+echo "API: $HOST_API$LESSON/next_up" >>log.txt 2>> error.txt
 
 echo "***********************************************************"
 echo "***************************START**************************"
@@ -54,6 +54,7 @@ do
   #real mu38 bin address
   # binUrl=$(curl -s $JSONURL |awk -F '(' '{printf $2}' | awk -F ')' '{printf $1}' | jq '.media.assets | .[4].url')
   binUrl=$(curl -s $JSONURL | cut -d'(' -f2|cut -d')' -f1| jq '.media.assets | .[4].url')
+  # binUrl=$(curl -s $JSONURL |awk -F '[()]' '{printf $2}'| jq '.media.assets | .[4].url')
   echo $binUrl
 
 
@@ -68,13 +69,13 @@ do
   echo $ts_URL
 
   #download mu38 ts files
-  you-get -O egghead-$num-$LESSON_NAME --debug $ts_URL
+  you-get -O egghead-$num-$LESSON_NAME --debug $ts_URL >>log.txt 2>> error.txt
 
   if [ $? -ne 0 ]; then
     FAIL_ARRAY+=($ts_URL)
-    echo "$url download failed please try again"
+    echo "$url download failed please try again" >>log.txt 2>> error.txt
   else
-    echo "$url download completed"
+    echo "$url download completed" >>log.txt 2>> error.txt
   fi
 done
 

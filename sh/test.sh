@@ -67,3 +67,52 @@ IFS='/' read -r -a array <<< "$URL"
 method1Last=${array[@]: -1:1}
 # method 2
 method2Last=`echo $URL | rev | cut -d / -f 1 | rev`
+
+########### get () inside things ########
+# echo "(sadsadsadkjsajd)" | awk -F '[()]' '{printf $2\n}'
+
+
+############ list current directory files ############
+for w in $(echo *); do echo $w; done
+
+
+
+##################  uniq ##################
+# This command removes duplicate adjacent lines from the file
+# ./file1
+# aa
+# aa
+# bb
+# bb
+# cc
+# cc
+# yy
+# zz
+# uniq file1
+#aa
+#bb
+#cc
+#yy
+#zz
+#uniq -d file1
+#aa
+#bb
+#cc
+
+##################  tr ##################
+# translate the lower case characters to upper case
+# tr '[a-z]' '[A-Z]' < file
+# This will squeeze multiple spaces into a single space:
+# $ ls –l | tr -s " "
+
+
+##### find success would write into success_file while error to /dev/null
+# find . -name "*.sh" > success_file 2> /dev/null
+##### no matter success or fail, all write into log.txt
+# find . -name "*.sh" > log.txt 2>&1
+
+# &> log.txt      => redirect both output and error to log.txt.
+# > log.tx 2>&1   => redirect result to log.txt and send errors to where the output is going, such as log.txt.
+# 1>&2           => send a standard output to the standard error. This will merge the output with the standard error.
+# >|             => This overrides no clobber when redirecting the output
+# <> filename       => This uses the file as both standard input and output if a device file (from /dev)
