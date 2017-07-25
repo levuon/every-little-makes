@@ -1,6 +1,14 @@
 #!/bin/bash
 
 
+# debug -x, -v, -xv
+# -x
+# -v The verbose (-v) option to the shell is more useful if you simply want to see the running code of the script that you’re working with
+# set -v
+# #!/bin/bash
+# set -v or set -x or set -vx
+#
+
 ############## split ... to array ##############
 # read -p "inpu >> " string
 # IFS=', ' read -r -a array <<< "$string"
@@ -116,3 +124,34 @@ for w in $(echo *); do echo $w; done
 # 1>&2           => send a standard output to the standard error. This will merge the output with the standard error.
 # >|             => This overrides no clobber when redirecting the output
 # <> filename       => This uses the file as both standard input and output if a device file (from /dev)
+
+
+
+
+########### set command will show all variables declared in shell. ############
+########### env command will display all environmental variables.  ############
+########### echo $$ the process ID of current shell ############
+
+# $0          Shell script name or command
+# $1–$9       Positional parameters 1–9
+# ${10}       Positional parameter 10
+# $#          Total number of parameters
+# $*          Evaluates to all the positional parameters
+# $@          Same as $*, except when double quoted
+# "$*"        Displays all parameters as "$1 $2 $3", and so on
+# "$@"        Displays all parameters as "$1" "$2" "$3", and so on
+# $?	上个命令的退出状态，或函数的返回值。
+
+
+
+
+# 简单一行命令实现发送邮件
+# echo 'content test' | mail -s "title test" -t  abc@hello.com,efg@hello.com,123@world.com    -a From:aaa@qq.com
+# 内容由文件导入
+# mail -s "sh mail test"  < file1.txt
+# 带上附件
+#  (uuencode file1.txt file1.txt; uuencode file2.txt file2.txt) | mail -s "title test" -t  hello@aaa.com
+# 内容 + 附件
+# (echo '1111111'; uuencode file1.txt file1.txt; uuencode file2.txt file2.txt) | mail -s "title test" -t  hello@aaa.com
+# 多个内容 +多个 附件
+# (echo '1111111'; echo '22222222'; uuencode file1.txt file1.txt; uuencode file2.txt file2.txt) | mail -s "title test" -t  hello@aaa.com

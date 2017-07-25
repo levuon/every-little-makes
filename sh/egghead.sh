@@ -1,8 +1,8 @@
 #!/bin/bash
-
+# set -x
 
 # API
-HOST_API='https://egghead.io/api/v1/lessons/'
+readonly HOST_API='https://egghead.io/api/v1/lessons/'
 NAME_JSON=""
 
 
@@ -12,7 +12,7 @@ FAIL_ARRAY=()
 read -p "please input vedoi url >>  " URL
 echo "INPUPT URL:  $URL" >>log.txt 2>> error.txt
 
-URL="https://egghead.io/lessons/postgresql-find-related-data-with-inner-join-in-postgres"
+# URL="https://egghead.io/lessons/postgresql-find-related-data-with-inner-join-in-postgres"
 
 # get lesson name
 # method 1
@@ -31,7 +31,7 @@ echo "***************************START**************************"
 echo "***********************************************************"
 
 # get mu38 json url
-declare -a DATA=($(curl -s $HOST_API$LESSON/next_up | jq '.list.lessons | .[].media_urls.wistia_url'))
+DATA=($(curl -s $HOST_API$LESSON/next_up | jq '.list.lessons | .[].media_urls.wistia_url'))
 
 ###############  lastest ###########
 one=1
@@ -106,6 +106,10 @@ done
 #     fi
 # done
 
+# split () {
+#   #usage
+#
+# }
 
 
 # https://embedwistia-a.akamaihd.net/deliveries/a512be1dfa88e5e13863fc56609ba79080451241.bin
