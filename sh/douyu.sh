@@ -6,6 +6,8 @@
 # echo 65189_500{0..165}.ts | tr " " "\n" > tslist
 # while read line; do cat $line >> combined.ts; done < tslist
 
+
+
 read -p "please input the url>>    " URL
 read -p "please input the number>> " NUMBER
 read -p "please input save fileName>> " NAME
@@ -25,7 +27,7 @@ echo "****** PREPARE START *************"
 
 
 echo "****** START LOOP *************"
-for k in $( seq 437 $NUMBER )
+for k in $( seq 0 $NUMBER )
 do
   fileNum=`echo $k |awk '{printf ("%07d\n", $1)}'`
   # echo ${fileNum}${QUERY}
@@ -35,10 +37,10 @@ do
   echo ${PREFIX}${fileNum}${QUERY}| tr " " "\n" > tslist
   while read line; do cat $line >> combined.ts; done < tslist
 done
-
-rm ${PREFIX}*
-
-ffmpeg -i combine.ts -c:v libx264 -c:a copy -bsf:a aac_adtstoasc $NAME.mp4
-rm combined.ts
+#
+# rm ${PREFIX}*
+#
+# ffmpeg -i combine.ts -c:v libx264 -c:a copy -bsf:a aac_adtstoasc $NAME.mp4
+# rm combined.ts
 
 echo '######## END'
