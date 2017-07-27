@@ -16,9 +16,6 @@ master
     please input save fileName>> xxx
   ```
 
-  eg: http://videows1.douyucdn.cn/live/normal_2169679120170701223056-upload-e259/76ba471122d944668a684cb6ada96648_0000000.ts?k=72dbcd135ccbafae6968377dca05932e&t=596f17e2&u=18481816&ct=web_share&vid=917849&d=EFEC3B7B3EA69F5A373D55C037F7BFE3
-
-
 ## 2: 下载egghead free vedio
  1. exec egghead.sh
  ```sh

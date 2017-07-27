@@ -26,7 +26,7 @@ n=`expr $n - 1`
 for index in "${!ipaddr[@]}"
 do
   you-get $HOST/${ipaddr[index]} >> log.txt
-done
+
 
 
 #
