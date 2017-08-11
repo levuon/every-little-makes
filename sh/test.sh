@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 切割字符串
+# arr=(${line//,/ })
 
 # debug -x, -v, -xv
 # -x
@@ -155,3 +157,59 @@ for w in $(echo *); do echo $w; done
 # (echo '1111111'; uuencode file1.txt file1.txt; uuencode file2.txt file2.txt) | mail -s "title test" -t  hello@aaa.com
 # 多个内容 +多个 附件
 # (echo '1111111'; echo '22222222'; uuencode file1.txt file1.txt; uuencode file2.txt file2.txt) | mail -s "title test" -t  hello@aaa.com
+
+
+
+# $?
+# The preceding command will return 0, if the ls command executed successfully.
+# The result will be nonzero, such as 1 or 2 or any other nonzero number, if the command has failed.
+
+
+#test double brackets
+# -n string                           True if the length of string is nonzero.
+# -z string                           True if the length of string is zero.
+# string1 != string2                   True if the strings are not equal.
+# string1 == string2 string1 = string2  True if the strings are equal.
+# string1 > string2                    True if string1 sorts after string2 lexicographically.
+# string1 < string2                    True if string1 sorts before string2 lexicographically.
+name=lev
+test –n $string      or     [ –n $string ]
+echo $?
+
+# Check if file is Directory
+[ -d work ]
+# Check that is it a File
+[ -f test.txt ]
+# Check if File has size greater than 0
+[ -s test.txt ]
+# Check if File has Read Permission
+[ -r File2 ]
+# Check if File Has Write Permission
+[ -w File2 ]
+# Check if File Has Execute Permission
+[ -x File2 ]
+
+
+# select
+select var1 in a  bc   def    ghi   jkl
+do
+  echo "Present value of var1 is $var1"
+done
+
+#for
+max=10
+for  ((i=1; i<=max;  i++))
+do
+echo -n "$i     "    # one case with echo without –n option
+done
+
+
+
+#  Symbol Commands
+# ( )        Run the enclosed command in a sub-shell
+# (( ))      Evaluate and assign value to variable and do math in a shell
+# $(( ))     Evaluate the enclosed expression
+# [ ]        Same as the test command
+# [[ ]]      Used for string comparison
+# $( )       Command substitution
+# `command`   Command substitution

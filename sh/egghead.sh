@@ -10,38 +10,50 @@ NAME_JSON=""
 FAIL_ARRAY=()
 
 read -p "please input vedoi url >>  " URL
-echo "INPUPT URL:  $URL" >>log.txt 2>> error.txt
+echo "INPUPT URL:  $URL"
 
-# URL="https://egghead.io/lessons/postgresql-find-related-data-with-inner-join-in-postgres"
+# URL="https://egghead.io/lessons/react-install-and-configure-the-entry-point-of-react-intl"
 
-# get lesson name
+# get course name
 # method 1
 # IFS='/' read -r -a array <<< "$URL"
-# LESSON=${array[@]: -1:1}
+# COURSE=${array[@]: -1:1}
 # method 2
-LESSON=`echo $URL | rev | cut -d / -f 1 | rev`
+COURSE=`echo $URL | rev | cut -d / -f 1 | rev`
+
+function slash() {
+  echo $1 | rev | cut -d / -f 1 | rev
+}
 
 
-
-echo "lesson_name: $LESSON" >>log.txt 2>> error.txt
-echo "API: $HOST_API$LESSON/next_up" >>log.txt 2>> error.txt
+echo "course_name: $COURSE"
+echo "API: $HOST_API$COURSE/next_up"
 
 echo "***********************************************************"
 echo "***************************START**************************"
 echo "***********************************************************"
 
 # get mu38 json url
-DATA=($(curl -s $HOST_API$LESSON/next_up | jq '.list.lessons | .[].media_urls.wistia_url'))
+# DATA=($(curl -s $HOST_API$LESSON/next_up | jq '.list.lessons | .[].media_urls.wistia_url'))
+DATA=($(curl -s $HOST_API$COURSE/next_up | jq '.list.lessons | [.[] | { url: .media_urls.wistia_url, name: .slug } ]'))
+
+
+LESSON=`echo ${DATA[*]} | jq '.[] | .name'`
+URL=`echo ${DATA[*]} | jq '.[] | .url'`
+
+LESSON=(${LESSON// / })
+URL=(${URL// / })
 
 ###############  lastest ###########
 one=1
-for index in "${!DATA[@]}"
+for index in "${!URL[@]}"
 do
   #get json name json url
   # DATA=`echo ${DATA[index]}|awk -F '"' '{printf $2}'`
-  DATA=`echo ${DATA[index]} | cut -d '"' -f 2`
+  echo ${URL[index]}
+  MEDIA_URL=`echo ${URL[index]} | cut -d '"' -f 2`
   # IFS='/' read -r -a key <<< "$DATA"
-  NAME_JSON=`echo $DATA | rev | cut -d / -f 1 | rev`
+  NAME_JSON=`echo $MEDIA_URL | rev | cut -d / -f 1 | rev`
 
 
   echo "NAME_JSON: $NAME_JSON"
@@ -69,22 +81,17 @@ do
   echo $ts_URL
 
   #download mu38 ts files
-  you-get -O egghead-$num-$LESSON_NAME --debug $ts_URL >>log.txt 2>> error.txt
+  LESSON_NAME=`echo ${LESSON[index]}|cut -d '"' -f2`
+  you-get -O egghead-$num-$LESSON_NAME --debug $ts_URL
 
   if [ $? -ne 0 ]; then
     FAIL_ARRAY+=($ts_URL)
-    echo "$url download failed please try again" >>log.txt 2>> error.txt
+    echo "$url download failed please try again"
   else
-    echo "$url download completed" >>log.txt 2>> error.txt
+    echo "$url download completed" 
   fi
 done
 
-
-# for index in "${!FAIL_ARRAY[@]}"
-# do
-#   echo "haha ${FAIL_ARRAY[index]}"
-# done
-#
 
 
 ##############  brefore ###########
