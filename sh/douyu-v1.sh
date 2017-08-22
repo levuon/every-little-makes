@@ -25,8 +25,14 @@ n=`expr $n - 1`
 
 for index in "${!ipaddr[@]}"
 do
-  you-get $HOST/${ipaddr[index]} >> log.txt
-
+  you-get -O "$index-coc" $HOST/${ipaddr[index]} >> log.txt
+  wait
+  echo "$index-coc.ts*"| tr " " "\n" > tslist
+  while read line;
+  do
+    cat $line >> combined.ts; done < tslist
+  rm -rf "$index-coc*"
+done
 
 
 #

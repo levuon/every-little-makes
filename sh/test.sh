@@ -4,7 +4,7 @@
 # arr=(${line//,/ })
 
 # debug -x, -v, -xv
-# -x
+# -x commonly used is the -x option, which displays the commands as they get executed
 # -v The verbose (-v) option to the shell is more useful if you simply want to see the running code of the script that you’re working with
 # set -v
 # #!/bin/bash

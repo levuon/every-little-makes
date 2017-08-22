@@ -37,39 +37,38 @@ echo "***********************************************************"
 
 # get mu38 json url
 # DATA=($(curl -s $HOST_API$LESSON/next_up | jq '.list.lessons | .[].media_urls.wistia_url'))
-DATA=($(curl -s $HOST_API$COURSE/next_up | jq '.list.lessons | [.[] | { url: .media_urls.wistia_url, name: .slug } ]'))
+# DATA=($(curl -s $HOST_API$COURSE/next_up | jq '.list.lessons | [.[] | { url: .media_urls.wistia_url, name: .slug } ]'))
+DATA=($(curl -s $HOST_API$COURSE/next_up | jq '.list.lessons | [.[] | { url: .media_urls.wistia_url, name: .slug, jsonId: .wistia_id } ]'))
 
 
 LESSON=`echo ${DATA[*]} | jq '.[] | .name'`
 URL=`echo ${DATA[*]} | jq '.[] | .url'`
+JSONID=`echo ${DATA[*]} | jq '.[] | .jsonId'`
 
 LESSON=(${LESSON// / })
 URL=(${URL// / })
-
+JSONID=(${JSONID// / })
 ###############  lastest ###########
 one=1
-for index in "${!URL[@]}"
+for index in "${!JSONID[@]}"
 do
   #get json name json url
   # DATA=`echo ${DATA[index]}|awk -F '"' '{printf $2}'`
-  echo ${URL[index]}
-  MEDIA_URL=`echo ${URL[index]} | cut -d '"' -f 2`
-  # IFS='/' read -r -a key <<< "$DATA"
-  NAME_JSON=`echo $MEDIA_URL | rev | cut -d / -f 1 | rev`
+  echo ${JSONID[index]}
+  JSONID=`echo ${JSONID[index]} | cut -d '"' -f 2`
+  echo "JSON_ID: ${JSONID}"
 
-
-  echo "NAME_JSON: $NAME_JSON"
   num=`expr "$index" + "$one"`
 
   #real json url
-  JSONURL="https://fast.wistia.com/embed/medias/${NAME_JSON}.json?callback=wistiajson1"
+  JSONURL="https://fast.wistia.com/embed/medias/${JSONID}.json?callback=wistiajson1"
   echo $JSONURL
 
   #real mu38 bin address
-  # binUrl=$(curl -s $JSONURL |awk -F '(' '{printf $2}' | awk -F ')' '{printf $1}' | jq '.media.assets | .[4].url')
-  binUrl=$(curl -s $JSONURL | cut -d'(' -f2|cut -d')' -f1| jq '.media.assets | .[4].url')
+  binUrl=$(curl -s $JSONURL |awk -F '(' '{printf $2}' | awk -F ')' '{printf $1}' | jq '.media.assets | .[4].url')
+  # binUrl=$(curl -s $JSONURL | jq '.media.assets | .[4].url')
   # binUrl=$(curl -s $JSONURL |awk -F '[()]' '{printf $2}'| jq '.media.assets | .[4].url')
-  echo $binUrl
+  echo "binUrl: $binUrl"
 
 
   # fileName=`echo $binUrl|awk -F '"' '{printf $2}'`
