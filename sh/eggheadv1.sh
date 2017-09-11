@@ -7,7 +7,6 @@
 readonly HOST_API='https://egghead.io/api/v1/lessons/'
 NAME_JSON=""
 
-
 #FAILED
 FAIL_ARRAY=()
 
@@ -83,6 +82,7 @@ do
 
   #download mu38 ts files
   LESSON_NAME=`echo ${LESSON[index]}|cut -d '"' -f2`
+  # echo -e "$ts_URL \n"  >> log.txt
   you-get -O egghead-$num-$LESSON_NAME --debug $ts_URL
 
   if [ $? -ne 0 ]; then

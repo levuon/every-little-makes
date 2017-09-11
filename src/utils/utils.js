@@ -33,10 +33,26 @@ const excuteTimes = n => fn => {
 	}
 }
 
+function inherits(ctor, superCtor) {
+  if(ctor === undefined || ctor === null){
+    throw new Error('ERR_INVALID_ARG_TYPE', 'ctor', 'function');
+  }
+  if(superCtor === undefined || superCtor === null) {
+    throw new Error('ERR_INVALID_ARG_TYPE', 'superCtor', 'function');
+  }
+  if(superCtor.prototype === null){
+    throw new errors.TypeError('ERR_INVALID_ARG_TYPE', 'superCtor.prototype',
+      'function');
+  }
+  ctor.super__ = superCtor;
+  Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
+}
+
 module.exports = {
     isPrime,
     randomColor,
     after,
 		once,
-		excuteTimes
+    excuteTimes,
+    inherits
 }

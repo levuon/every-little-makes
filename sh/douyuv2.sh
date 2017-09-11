@@ -6,7 +6,6 @@ API=https://v.douyu.com/api/swf/getvideourl/
 
 
 read -p "input mu38 url>>" mu38_url
-read -p "input name>>" name
 
 HOST=`echo $mu38_url| cut -d '/' -f-5`
 echo $HOST
@@ -25,13 +24,14 @@ n=`expr $n - 1`
 
 for index in "${!ipaddr[@]}"
 do
-  you-get -O "$index-coc" $HOST/${ipaddr[index]} >> log.txt
-  wait
-  echo "$index-coc.ts*"| tr " " "\n" > tslist
-  while read line;
-  do
-    cat $line >> "$name.ts"; rm -rf "$index-coc.ts*"; done < tslist
-  # rm -rf "$index-coc*"
+  # you-get -O "$index-coc" $HOST/${ipaddr[index]} >> log.txt
+  echo -e "$HOST/${ipaddr[index]} \n"  >> log.txt
+  # wait
+  # echo "$index-coc.ts*"| tr " " "\n" > tslist
+  # while read line;
+  # do
+  #   cat $line >> "$name.ts"; rm -rf "$index-coc.ts*"; done < tslist
+  # # rm -rf "$index-coc*"
 done
 
 

@@ -13,9 +13,13 @@ rate = 5;      // "★★★★★"
 console.log( star.slice( 5 - rate, 10 - rate ) );
 
 
+// ######## 快速构造数组
+
+Array(10).fill().map((_,i) => i + 1) // [1,2,3,4,5,6,7,8,9,10]
+
 // ################## 函数一等公民 ##################
 // BAD:
-const getServerStuff ＝ function(callback){
+const getServerStuff = function(callback){
     return ajaxCall(function(json){
       callback(json)
     })
