@@ -1,0 +1,474 @@
+{
+  "slug": "functional-javascript-v2",
+  "title": "Functional-Light JavaScript, v2",
+  "description": "Learn the fundamentals of functional programming in JavaScript in this (updated, version 2) of the course with Kyle Simpson -- Author of \"You Don't Know JS\" book series -- to write more flexible and effective code. Kyle covers the core of functional JavaScript with concepts like pure functions, .map() .reduce() .filter(), recursion and function composition. Plus go even deeper with advanced functional programming concepts like fusion, transducing and monads!\r\n\r\nThis course is for experienced JavaScript developers who want to learn how to employ more trustworthy and verifiable code, plus enhance readability of that code.",
+  "thumbnail": "https://frontendmasters.com/assets/javascript_functional_lite_v2.jpg",
+  "resources": [{
+    "label": "Slides and Code (ZIP)",
+    "url": "https://frontendmasters.com/assets/kyle-simpson/js/functional-js-updated.zip"
+  }],
+  "instructors": [{
+    "slug": "simpson",
+    "name": "Kyle Simpson",
+    "tagLine": "You Don't Know JavaScript",
+    "bio": "Kyle Simpson is an Open Web Evangelist from Austin, TX, who's passionate about all things JavaScript. He's an author, workshop trainer, tech speaker, and OSS contributor/leader.",
+    "imageURL": "https://frontendmasters.com/assets/simpson.png"
+  }],
+  "lessonSlugs": ["introduction", "functional-programming", "provable-and-readable", "pure-functions-and-side-effects", "purifying-functions", "challenge-1-purify-a-function", "challenge-1-solution", "evolving-understanding-of-impurity", "arguments", "no-points", "challenge-2-point-free-style", "challenge-2-solution", "composition-introduction", "challenge-3-compose-and-pipe-utility", "challenge-3-solution", "immutability-introduction", "challenge-4-compose-and-pipe", "challenge-4-solution", "closure-and-side-effects", "challenge-5-purifying-closure", "challenge-5-solution", "generalized-to-specialized", "recursion-introduction", "challenge-6-recursive-operation", "challenge-6-solution", "proper-tail-calls", "continuation-passing-style", "trampolines", "list-transformations", "filter-exclusion", "reduce-combining", "challenge-7-culmination-exercise", "challenge-7-solution", "challenge-7-solution-2", "challenge-7-solution-3", "fusion", "transducing", "data-structure-operations-introduction", "challenge-8-culmination-exercise-2", "challenge-8-solution", "fpo-js", "lazy-arrays", "challenge-9-observables", "challenge-9-solution", "wrapping-up"],
+  "lessonData": [{
+    "slug": "introduction",
+    "title": "Introduction",
+    "description": "Kyle Simpson introduces his Functional JavaScript course and talks about the importance of function playing the pivotal role about how data flows through an application.\r\n - https://frontendmasters.com/assets/kyle-simpson/js/functional-js-updated.zip",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/1-90.jpg",
+    "index": 0,
+    "elementIndex": 1,
+    "statsId": "llm22stn4r",
+    "timestamp": "00:00:00 - 00:00:59",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/llm22stn4r"
+  }, {
+    "slug": "functional-programming",
+    "title": "Functional Programming",
+    "description": "Kyle discusses why learning Functional Programming (FP) is essential to becoming a better programmer. FP is the process of building software by composing pure functions, avoiding shared state, mutable data, and side-effects. Functional programming is declarative rather than imperative, and application state flows through pure functions. Declarative code focuses on what happens while Imperative code is focusing how something should happen.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/2-90.jpg",
+    "index": 1,
+    "elementIndex": 3,
+    "statsId": "nn1q5tywuy",
+    "timestamp": "00:01:00 - 00:09:07",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/nn1q5tywuy"
+  }, {
+    "slug": "provable-and-readable",
+    "title": "Provable and Readable",
+    "description": "Kyle explains that writing code that you don't understand is code that you cannot trust and vice versa. By using Functional Programming through mathematically proven patterns, programmings can trust their code. Kyle takes questions from students about abstraction.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/3-90.jpg",
+    "index": 2,
+    "elementIndex": 4,
+    "statsId": "hqz0477pgc",
+    "timestamp": "00:09:08 - 00:22:23",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/hqz0477pgc"
+  }, {
+    "slug": "pure-functions-and-side-effects",
+    "title": "Pure Functions and Side-Effects",
+    "description": "Underscoring pure functions are at the heart of functional programming, Kyle states that the first step in learning how to write pure functions is to understand what makes a function impure or have side effects. For example, a function that alters variables outside of its scope is an impure function.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/4-90.jpg",
+    "index": 3,
+    "elementIndex": 5,
+    "statsId": "6jcsjaxlz8",
+    "timestamp": "00:22:24 - 00:47:11",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/6jcsjaxlz8"
+  }, {
+    "slug": "purifying-functions",
+    "title": "Purifying Functions",
+    "description": "Kyle reviews how to purify a function removing side effects, but the tradeoffs include pragmatic approach. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/5-90.jpg",
+    "index": 4,
+    "elementIndex": 6,
+    "statsId": "zvjfy2qcug",
+    "timestamp": "00:47:12 - 00:58:55",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/zvjfy2qcug"
+  }, {
+    "slug": "challenge-1-purify-a-function",
+    "title": "Challenge 1: Purify a Function",
+    "description": "In this challenge, students purify a function by creating a pure function named “bar” to wrap around the function “foo.”",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/6-90.jpg",
+    "index": 5,
+    "elementIndex": 7,
+    "statsId": "xuvv3kq1xt",
+    "timestamp": "00:58:56 - 01:08:20",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/xuvv3kq1xt"
+  }, {
+    "slug": "challenge-1-solution",
+    "title": "Challenge 1: Solution",
+    "description": "Kyle walks through the solution to Challenge 1.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/7-90.jpg",
+    "index": 6,
+    "elementIndex": 8,
+    "statsId": "bi4vsidp2d",
+    "timestamp": "01:08:21 - 01:17:27",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/bi4vsidp2d"
+  }, {
+    "slug": "evolving-understanding-of-impurity",
+    "title": "Evolving Understanding of Impurity",
+    "description": "After the exercise, Kyle continues to explore the potential pitfalls of coding pure functions and judging its purity relies on the context of the application.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/8-90.jpg",
+    "index": 7,
+    "elementIndex": 9,
+    "statsId": "yk467b9xkh",
+    "timestamp": "01:17:28 - 01:32:53",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/yk467b9xkh"
+  }, {
+    "slug": "arguments",
+    "title": "Arguments",
+    "description": "The order of arguments matter, Spreading Properties",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/9-90.jpg",
+    "index": 8,
+    "elementIndex": 11,
+    "statsId": "l0xj3qqss5",
+    "timestamp": "01:32:54 - 01:41:59",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/l0xj3qqss5"
+  }, {
+    "slug": "no-points",
+    "title": "No Points",
+    "description": "Kyle reviews tacit programming or \"point-free\" style as it is commonly called. The term \"point\" refers to a function's parameter. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/10-90.jpg",
+    "index": 9,
+    "elementIndex": 12,
+    "statsId": "vdxgkb9ee6",
+    "timestamp": "01:42:00 - 01:48:13",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/vdxgkb9ee6"
+  }, {
+    "slug": "challenge-2-point-free-style",
+    "title": "Challenge 2: Point-Free Style",
+    "description": "In this challenge, students refector functions into point-free style.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/11-90.jpg",
+    "index": 10,
+    "elementIndex": 13,
+    "statsId": "nqqok0zvm7",
+    "timestamp": "01:48:14 - 01:48:58",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/nqqok0zvm7"
+  }, {
+    "slug": "challenge-2-solution",
+    "title": "Challenge 2: Solution",
+    "description": "Kyle walks through the solution to Challenge 2.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/12-90.jpg",
+    "index": 11,
+    "elementIndex": 14,
+    "statsId": "cesf63ydj0",
+    "timestamp": "01:48:59 - 01:55:30",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/cesf63ydj0"
+  }, {
+    "slug": "composition-introduction",
+    "title": "Composition Introduction",
+    "description": "Functions come in different shapes and sizes, Kyle illustrates how to combine functions to make a new compound function as a utlitilty in various parts of a program. This method of using functions in this manner is called composition.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/13-90.jpg",
+    "index": 12,
+    "elementIndex": 16,
+    "statsId": "ege776ufjt",
+    "timestamp": "01:55:31 - 02:16:45",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/ege776ufjt"
+  }, {
+    "slug": "challenge-3-compose-and-pipe-utility",
+    "title": "Challenge 3: Compose and Pipe Utility",
+    "description": "In this challenge, students code their own compose and pipe utilitiy.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/14-90.jpg",
+    "index": 13,
+    "elementIndex": 17,
+    "statsId": "gm3s5v84e3",
+    "timestamp": "02:16:46 - 02:17:56",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/gm3s5v84e3"
+  }, {
+    "slug": "challenge-3-solution",
+    "title": "Challenge 3: Solution",
+    "description": "Kyle walks through the solution to Challenge 3.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/15-90.jpg",
+    "index": 14,
+    "elementIndex": 18,
+    "statsId": "yb489tcndw",
+    "timestamp": "02:17:57 - 02:24:34",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/yb489tcndw"
+  }, {
+    "slug": "immutability-introduction",
+    "title": "Immutability Introduction",
+    "description": "To a functional programmer, Kyle explains that immutability refers to a variable's ability to be changed. Kyle illustrates this by explaining the difference between using the “const” keyword and using Object.freeze(). \r\n - http://Facebook.GitHub.io/immutable-js",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/16-90.jpg",
+    "index": 15,
+    "elementIndex": 20,
+    "statsId": "09ghtoaxm2",
+    "timestamp": "02:24:35 - 02:43:48",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/09ghtoaxm2"
+  }, {
+    "slug": "challenge-4-compose-and-pipe",
+    "title": "Challenge 4: Compose and Pipe",
+    "description": "In this challenge, students code their own compose and pipe utilitiy.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/17-90.jpg",
+    "index": 16,
+    "elementIndex": 21,
+    "statsId": "wf8ix46eld",
+    "timestamp": "02:43:49 - 02:44:28",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/wf8ix46eld"
+  }, {
+    "slug": "challenge-4-solution",
+    "title": "Challenge 4: Solution",
+    "description": "Kyle walks through the solution to Challenge 4.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/18-90.jpg",
+    "index": 17,
+    "elementIndex": 22,
+    "statsId": "tpio1n2lan",
+    "timestamp": "02:44:29 - 02:53:11",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/tpio1n2lan"
+  }, {
+    "slug": "closure-and-side-effects",
+    "title": "Closure and Side Effects",
+    "description": "Kyle reviews closure, which is when a function \"remembers\" the variables around it even when that function is executed elsewhere. While using closure is a very powerful technique, Kyle demonstrates that side-effects can be produced and how closure can be written in a more pure way. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/19-90.jpg",
+    "index": 18,
+    "elementIndex": 24,
+    "statsId": "wukqpxmqaw",
+    "timestamp": "02:53:12 - 03:13:16",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/wukqpxmqaw"
+  }, {
+    "slug": "challenge-5-purifying-closure",
+    "title": "Challenge 5: Purifying Closure",
+    "description": "In this challenge, students rewrite a closure to be more pure.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/20-90.jpg",
+    "index": 19,
+    "elementIndex": 25,
+    "statsId": "3xecrggajr",
+    "timestamp": "03:13:17 - 03:13:51",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/3xecrggajr"
+  }, {
+    "slug": "challenge-5-solution",
+    "title": "Challenge 5: Solution",
+    "description": "Kyle walks through the solution to Challenge 5 and takes questions from students.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/21-90.jpg",
+    "index": 20,
+    "elementIndex": 26,
+    "statsId": "adxxxycbgc",
+    "timestamp": "03:13:52 - 03:36:46",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/adxxxycbgc"
+  }, {
+    "slug": "generalized-to-specialized",
+    "title": "Generalized to Specialized",
+    "description": "Kyle demonstrates using partials as a technique to specialize a generalized function. Then Kyle shows that currying, while a similar technique, is where a function that expects multiple arguments is broken down into successive chained functions that each take a single argument.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/22-90.jpg",
+    "index": 21,
+    "elementIndex": 28,
+    "statsId": "k2rxzy3v6w",
+    "timestamp": "03:36:47 - 03:54:51",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/k2rxzy3v6w"
+  }, {
+    "slug": "recursion-introduction",
+    "title": "Recursion Introduction",
+    "description": "Kyle introduces the concept of recursion, which is when a function calls itself to perform an operation and it will continue to call itself until a base case is reached. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/23-90.jpg",
+    "index": 22,
+    "elementIndex": 30,
+    "statsId": "9jznhsautf",
+    "timestamp": "03:54:52 - 04:16:38",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/9jznhsautf"
+  }, {
+    "slug": "challenge-6-recursive-operation",
+    "title": "Challenge 6: Recursive Operation",
+    "description": "In this challenge, students take create a recursive operation.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/24-90.jpg",
+    "index": 23,
+    "elementIndex": 31,
+    "statsId": "zlgrjn7a0p",
+    "timestamp": "04:16:39 - 04:17:23",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/zlgrjn7a0p"
+  }, {
+    "slug": "challenge-6-solution",
+    "title": "Challenge 6: Solution",
+    "description": "Kyle walks through the solution to Challenge 6.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/25-90.jpg",
+    "index": 24,
+    "elementIndex": 32,
+    "statsId": "vlf79ugz29",
+    "timestamp": "04:17:24 - 04:23:40",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/vlf79ugz29"
+  }, {
+    "slug": "proper-tail-calls",
+    "title": "Proper Tail Calls",
+    "description": "Kyle reviews Proper Tail Calls (PTC). A tail call occurs when a function calls another as its last action, so it has nothing else to do. A PTC does not need any extra stack space when doing a tail call.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/26-90.jpg",
+    "index": 25,
+    "elementIndex": 33,
+    "statsId": "flrixegb5j",
+    "timestamp": "04:23:41 - 04:55:21",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/flrixegb5j"
+  }, {
+    "slug": "continuation-passing-style",
+    "title": "Continuation Passing Style",
+    "description": "Kyle illustrates Continuation Passing Style (CPS), which is organizing code so that each function receives another function to execute at its end.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/27-90.jpg",
+    "index": 26,
+    "elementIndex": 34,
+    "statsId": "lcrb43p40h",
+    "timestamp": "04:55:22 - 05:02:35",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/lcrb43p40h"
+  }, {
+    "slug": "trampolines",
+    "title": "Trampolines",
+    "description": "In demonstrating trampolines, Kyle shows that CPS-like continuations are created, but instead of passed in, they are shallowly returned. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/28-90.jpg",
+    "index": 27,
+    "elementIndex": 35,
+    "statsId": "mwc5ts34qb",
+    "timestamp": "05:02:36 - 05:09:19",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/mwc5ts34qb"
+  }, {
+    "slug": "list-transformations",
+    "title": "List Transformations",
+    "description": "Kyle introduces the Array.map() method and explains how it can be used to create immutable list transformations. Transforming a list involves performing an operation on every value in that list. The new list of transformed values has a one-to-one “mapping” with the original list.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/29-90.jpg",
+    "index": 28,
+    "elementIndex": 37,
+    "statsId": "es3rf3lrdh",
+    "timestamp": "05:09:20 - 05:25:55",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/es3rf3lrdh"
+  }, {
+    "slug": "filter-exclusion",
+    "title": "Filter: Exclusion",
+    "description": "Kyle reviews the Array.filter() as a method used to create list exclusions. Each item in the list is passed to a function which returns a boolean value representing whether that item should be included in the list or not. A new list of these filtered items is returned, leaving the original list unmodified.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/30-90.jpg",
+    "index": 29,
+    "elementIndex": 38,
+    "statsId": "f4hwy1afy8",
+    "timestamp": "05:25:56 - 05:34:22",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/f4hwy1afy8"
+  }, {
+    "slug": "reduce-combining",
+    "title": "Reduce: Combining",
+    "description": "Kyle introduces Array.reduce() method as a combiner. Just like the map() method, reduce() iterates through a list performing a transformation on each value. The difference is an initial value is also passed which the items are composed onto creating a smaller, “reduced” list or even a single return value.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/31-90.jpg",
+    "index": 30,
+    "elementIndex": 39,
+    "statsId": "0ei1j8u254",
+    "timestamp": "05:34:23 - 05:46:04",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/0ei1j8u254"
+  }, {
+    "slug": "challenge-7-culmination-exercise",
+    "title": "Challenge 7: Culmination Exercise",
+    "description": "In this challenge, students work through a number of the concepts taught throughout this course. Before starting the exercise, Kyle shares a few observations about the process of learning functional programming.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/32-90.jpg",
+    "index": 31,
+    "elementIndex": 40,
+    "statsId": "a01ngve2q6",
+    "timestamp": "05:46:05 - 05:48:38",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/a01ngve2q6"
+  }, {
+    "slug": "challenge-7-solution",
+    "title": "Challenge 7: Solution",
+    "description": "Kyle begins walking through the solution by creating an addn() function that takes an array of values and adds them together using the add2() function.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/33-90.jpg",
+    "index": 32,
+    "elementIndex": 41,
+    "statsId": "dc0toanwhe",
+    "timestamp": "05:48:39 - 06:05:55",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/dc0toanwhe"
+  }, {
+    "slug": "challenge-7-solution-2",
+    "title": "Challenge 7: Solution 2",
+    "description": "Building off the previous solution, Kyle changes the addn() function to now work with an array of functions instead of an array of values creating an appraoch that allows the incorporation of the reduce() method.\r\n - Tthere's a horn that starts at 04:53:33:20 and lasts till 04:58:35:13",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/34-90.jpg",
+    "index": 33,
+    "elementIndex": 42,
+    "statsId": "i2t0c1iejl",
+    "timestamp": "06:05:56 - 06:21:14",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/i2t0c1iejl"
+  }, {
+    "slug": "challenge-7-solution-3",
+    "title": "Challenge 7: Solution 3",
+    "description": "The last step in the exercise 4 solution is to incorporate the filter() method so only odd or even values can be passed to addn().",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/35-90.jpg",
+    "index": 34,
+    "elementIndex": 43,
+    "statsId": "27t90h6cc6",
+    "timestamp": "06:21:15 - 06:25:31",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/27t90h6cc6"
+  }, {
+    "slug": "fusion",
+    "title": "Fusion",
+    "description": "Kyle introduces the concept of fusion, which deals with combining adjacent operators to reduce the number of times the list is iterated over.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/36-90.jpg",
+    "index": 35,
+    "elementIndex": 44,
+    "statsId": "wsg69v92qs",
+    "timestamp": "06:25:32 - 06:31:06",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/wsg69v92qs"
+  }, {
+    "slug": "transducing",
+    "title": "Transducing",
+    "description": "Kyle shows how to create transducers, which are composable and efficient data transformation functions that do not create intermediate collections. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/37-90.jpg",
+    "index": 36,
+    "elementIndex": 45,
+    "statsId": "isujfcmmop",
+    "timestamp": "06:31:07 - 06:58:40",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/isujfcmmop"
+  }, {
+    "slug": "data-structure-operations-introduction",
+    "title": "Data Structure Operations Introduction",
+    "description": "",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/38-90.jpg",
+    "index": 37,
+    "elementIndex": 47,
+    "statsId": "mnv71bhisn",
+    "timestamp": "06:58:41 - 07:03:18",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/mnv71bhisn"
+  }, {
+    "slug": "challenge-8-culmination-exercise-2",
+    "title": "Challenge 8: Culmination Exercise 2",
+    "description": "In this challenge, students take all the concepts discussed in the course and use them to solve a coding exercise.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/39-90.jpg",
+    "index": 38,
+    "elementIndex": 48,
+    "statsId": "r7qbfinfaf",
+    "timestamp": "07:03:19 - 07:06:28",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/r7qbfinfaf"
+  }, {
+    "slug": "challenge-8-solution",
+    "title": "Challenge 8: Solution",
+    "description": "Kyle walks through the solution to Challenge 8 and takes questions from students.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/40-90.jpg",
+    "index": 39,
+    "elementIndex": 49,
+    "statsId": "jft0xyorow",
+    "timestamp": "07:06:29 - 07:25:53",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/jft0xyorow"
+  }, {
+    "slug": "fpo-js",
+    "title": "FPO.js",
+    "description": "Kyle introduces his FP library, FPO.js, whose methods are all styled to use named-arguments (object parameter destructuring) instead of individual positional arguments.\r\n - https://github.com/getify/fpo",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/41-90.jpg",
+    "index": 40,
+    "elementIndex": 51,
+    "statsId": "ix2csqp631",
+    "timestamp": "07:25:54 - 07:30:39",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/ix2csqp631"
+  }, {
+    "slug": "lazy-arrays",
+    "title": "Lazy Arrays",
+    "description": "Kyle illustrates that \"eager\" and \"lazy\" are ways to describe whether an operation will finish right away or progress over time. A \"lazy array\" is an array where the values will come in over time.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/42-90.jpg",
+    "index": 41,
+    "elementIndex": 53,
+    "statsId": "rstjcjvdes",
+    "timestamp": "07:30:40 - 07:39:13",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/rstjcjvdes"
+  }, {
+    "slug": "challenge-9-observables",
+    "title": "Challenge 9: Observables",
+    "description": "In this challenge, students program a countdown timer using observables.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/43-90.jpg",
+    "index": 42,
+    "elementIndex": 54,
+    "statsId": "hmk3l9nghz",
+    "timestamp": "07:39:14 - 07:40:01",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/hmk3l9nghz"
+  }, {
+    "slug": "challenge-9-solution",
+    "title": "Challenge 9: Solution",
+    "description": "Kyle walks through the solution to Challenge 9 and takes questions from students.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/44-90.jpg",
+    "index": 43,
+    "elementIndex": 55,
+    "statsId": "vzfbxq2rdc",
+    "timestamp": "07:40:02 - 07:46:28",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/vzfbxq2rdc"
+  }, {
+    "slug": "wrapping-up",
+    "title": "Wrapping Up",
+    "description": "Recapping the course, Kyle highlights the key concepts discussed in the course. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/08/14/45-90.jpg",
+    "index": 44,
+    "elementIndex": 57,
+    "statsId": "bnsgv8hpmg",
+    "timestamp": "07:46:29 - 07:51:18",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/bnsgv8hpmg"
+  }],
+  "lessonElements": ["Functional JavaScript v2", 0, "Functional Programming Introduction", 1, 2, 3, 4, 5, 6, 7, "Managing Function Inputs", 8, 9, 10, 11, "Composing Functions", 12, 13, 14, "Immutability", 15, 16, 17, "Closure", 18, 19, 20, "Partial Application", 21, "Recursion", 22, 23, 24, 25, 26, 27, "Data Structures", 28, 29, 30, 31, 32, 33, 34, 35, 36, "Data Structure Operations", 37, 38, 39, "Functional Programming Utility", 40, "Async Programming", 41, 42, 43, "Wrapping Up Functional JavaScript v2", 44],
+  "isTrial": true,
+  "hasTranscript": false,
+  "hasIntroLoop": false,
+  "hasWebVTT": false
+}

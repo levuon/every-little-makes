@@ -1,0 +1,434 @@
+{
+  "slug": "testing-javascript",
+  "title": "Testing JavaScript Applications (feat. React and Redux)",
+  "description": "Create automated testing so you can be sure you’re maintaining the highest quality JavaScript applications possible!\r\n\r\nKent C. Dodds shows you how to bulletproof your production applications with approaches that work in all JavaScript and Node environments, as well as showcasing how you can test React, Redux, and Node express applications.",
+  "thumbnail": "https://frontendmasters.com/assets/logo-1.jpg",
+  "resources": [{
+    "label": "Testing JavaScript Code (Github)",
+    "url": "https://github.com/kentcdodds/testing-workshop"
+  }],
+  "instructors": [{
+    "slug": "dodds",
+    "name": "Kent C Dodds",
+    "tagLine": "",
+    "bio": "",
+    "imageURL": ""
+  }],
+  "lessonSlugs": ["introduction", "bugs-and-how-to-stop-them", "types-of-tests", "setting-up-application", "challenge-1-simple-unit-test", "challenge-1-solution", "setting-up-jest", "code-coverage-reporting", "removing-jsdom", "feature-setting", "writing-unit-test-introduction", "assertions", "challenge-2-practical-example", "challenge-2-solution", "introducing-test-driven-developing", "jest-vs-mocha", "challenge-3-develop-iteratively", "challenge-3-solution", "finding-a-bug", "missing-avatar-bug", "challenge-4-test-for-a-newly-found-bug", "challenge-4-solution", "introducing-integration-testing", "setting-up-the-server", "using-fake-data", "async-await", "challenge-5-integration-testing", "challenge-5-solution", "authentication", "client-side-testing", "snapshot-testing", "visual-regression-testing-questions", "simulate-event-testing", "challenge-6-testing-the-editor", "challenge-6-solution", "testing-routes", "introducing-end-to-end-testing", "cypress-tradeoffs", "setting-up-cypress-tests", "challenge-7-cypress-testing", "wrapping-up"],
+  "lessonData": [{
+    "slug": "introduction",
+    "title": "Introduction",
+    "description": "Kent C. Dodds introduces his Testing JavaScript Applications course. He also reviews the course agenda and setup for coding exercises.\r\n - http://kcd.im/testing-workshop-slides",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/1-90.jpg",
+    "index": 0,
+    "elementIndex": 1,
+    "statsId": "lxqnaz5yux",
+    "timestamp": "00:00:00 - 00:06:31",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/lxqnaz5yux"
+  }, {
+    "slug": "bugs-and-how-to-stop-them",
+    "title": "Bugs and How to Stop Them",
+    "description": "While covering the types of bugs that occur in programming, Kent discusses major bugs that have happened in history and how programmers can prevent them.\r\n - https://commons.wikimedia.org/wiki/File:H96566k.jpg\r\n- http://heartbleed.com/\r\n- https://en.wikipedia.org/wiki/Cloudbleed\r\n- https://priceonomics.com/the-typo-that-destroyed-a-space-shuttle/\r\n- https://www.jpl.nasa.gov/news/releases/99/mcoloss1.html\r\n",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/2-90.jpg",
+    "index": 1,
+    "elementIndex": 2,
+    "statsId": "9ge7ncwza1",
+    "timestamp": "00:06:32 - 00:16:19",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/9ge7ncwza1"
+  }, {
+    "slug": "types-of-tests",
+    "title": "Types of Tests",
+    "description": "Kent discusses types of testing covered in this course: unit, integration, and end-to-end. He also discusses Test Pyramid, which supposes that unit testing is useful for both speed and financial reasons.\r\n - https://martinfowler.com/bliki/TestPyramid.html",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/3-90.jpg",
+    "index": 2,
+    "elementIndex": 3,
+    "statsId": "mdcrmx55gl",
+    "timestamp": "00:16:20 - 00:20:34",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/mdcrmx55gl"
+  }, {
+    "slug": "setting-up-application",
+    "title": "Setting up Application",
+    "description": "Kent introduces the testing software used in the course and the application that will be tested.\r\n - https://github.com/gothinkster/realworld",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/4-90.jpg",
+    "index": 3,
+    "elementIndex": 4,
+    "statsId": "ws7mdqjdjj",
+    "timestamp": "00:20:35 - 00:24:40",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/ws7mdqjdjj"
+  }, {
+    "slug": "challenge-1-simple-unit-test",
+    "title": "Challenge 1: Simple Unit Test",
+    "description": "In this challenge, students write a unit test to check a returned value is a number.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/5-90.jpg",
+    "index": 4,
+    "elementIndex": 5,
+    "statsId": "oro5ogjjnj",
+    "timestamp": "00:24:41 - 00:28:18",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/oro5ogjjnj"
+  }, {
+    "slug": "challenge-1-solution",
+    "title": "Challenge 1: Solution",
+    "description": "Kent walks through the solution to Challenge 1.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/6-90.jpg",
+    "index": 5,
+    "elementIndex": 6,
+    "statsId": "xt98zdt1yc",
+    "timestamp": "00:28:19 - 00:30:03",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/xt98zdt1yc"
+  }, {
+    "slug": "setting-up-jest",
+    "title": "Setting up Jest",
+    "description": "Kent sets up Jest, a JavaScript testing solution developed by Facebook, and creates a simple bug for a testing demonstration.\r\n - https://facebook.github.io/jest/",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/7-90.jpg",
+    "index": 6,
+    "elementIndex": 8,
+    "statsId": "lgwgt3fezp",
+    "timestamp": "00:30:04 - 00:36:39",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/lgwgt3fezp"
+  }, {
+    "slug": "code-coverage-reporting",
+    "title": "Code Coverage Reporting",
+    "description": "Kent introduces the concept of code coverage, a measure used to describe the degree to which the source code of a program is tested by a particular test suite. He shows how to generate code coverage reports within Jest and then use those reports as a way to stop code from being deployed if they coverage drops below a certain percentage.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/8-90.jpg",
+    "index": 7,
+    "elementIndex": 9,
+    "statsId": "16bj45s9ys",
+    "timestamp": "00:36:40 - 00:40:46",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/16bj45s9ys"
+  }, {
+    "slug": "removing-jsdom",
+    "title": "Removing JSDOM",
+    "description": "Kent shows that JSDom, a JavaScript based headless browser that can be used to create a realistic testing environment, is a part of Jest, which can be removed for faster performance testing within Jest if you are working primarily in node.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/9-90.jpg",
+    "index": 8,
+    "elementIndex": 10,
+    "statsId": "e7qqt118xl",
+    "timestamp": "00:40:47 - 00:42:33",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/e7qqt118xl"
+  }, {
+    "slug": "feature-setting",
+    "title": "Feature Setting",
+    "description": "Kent demonstrates various features with Jest: watch mode, which allows for running tests concurrently with development; filtering, to quickly find unit tests by name; test function, which allows the ability to skip tests until they are ready; and Babel integration, which allows for the use of a JavaScript compiler.\r\nWhile writing a unit test, Kent reviews best testing practices.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/10-90.jpg",
+    "index": 9,
+    "elementIndex": 11,
+    "statsId": "byx3uhmtx8",
+    "timestamp": "00:42:34 - 00:51:42",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/byx3uhmtx8"
+  }, {
+    "slug": "writing-unit-test-introduction",
+    "title": "Writing Unit Test Introduction",
+    "description": "While writing a unit test, Kent reviews best testing practices.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/11-90.jpg",
+    "index": 10,
+    "elementIndex": 13,
+    "statsId": "l9vsnmy5kr",
+    "timestamp": "00:51:43 - 01:00:43",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/l9vsnmy5kr"
+  }, {
+    "slug": "assertions",
+    "title": "Assertions",
+    "description": "Kent introduces Jest's expect() function. When you're writing tests, you often need to check that values meet certain conditions and expect() gives you access to some \"matchers\" that let you validate different things depending on what needs to be tested.\r\n - https://facebook.github.io/jest/docs/expect.html",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/12-90.jpg",
+    "index": 11,
+    "elementIndex": 14,
+    "statsId": "qqetpalbyy",
+    "timestamp": "01:00:44 - 01:03:16",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/qqetpalbyy"
+  }, {
+    "slug": "challenge-2-practical-example",
+    "title": "Challenge 2: Practical Example",
+    "description": "In this challenge, students create a use case and assert the output.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/13-90.jpg",
+    "index": 12,
+    "elementIndex": 15,
+    "statsId": "hq4fuks98y",
+    "timestamp": "01:03:17 - 01:07:50",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/hq4fuks98y"
+  }, {
+    "slug": "challenge-2-solution",
+    "title": "Challenge 2: Solution",
+    "description": "Kent walks through the solution to Challenge 2 and reviews feedback from students.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/14-90.jpg",
+    "index": 13,
+    "elementIndex": 16,
+    "statsId": "7tyewdhnbr",
+    "timestamp": "01:07:51 - 01:15:00",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/7tyewdhnbr"
+  }, {
+    "slug": "introducing-test-driven-developing",
+    "title": "Introducing Test-driven Developing",
+    "description": "Kent introduces test-driven development, which is the concept of writing tests that fail before you write working code. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/15-90.jpg",
+    "index": 14,
+    "elementIndex": 18,
+    "statsId": "3pd5o3nqbp",
+    "timestamp": "01:15:01 - 01:22:47",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/3pd5o3nqbp"
+  }, {
+    "slug": "jest-vs-mocha",
+    "title": "Jest vs. Mocha",
+    "description": "Kent answers a student question about the comparison of Jest and Mocha, another feature-rich JavaScript test framework.\r\n - https://mochajs.org/",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/16-90.jpg",
+    "index": 15,
+    "elementIndex": 19,
+    "statsId": "jtucwi71pw",
+    "timestamp": "01:22:48 - 01:24:53",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/jtucwi71pw"
+  }, {
+    "slug": "challenge-3-develop-iteratively",
+    "title": "Challenge 3: Develop Iteratively",
+    "description": "In this challenge, students create a function iteratively using test-driven development.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/17-90.jpg",
+    "index": 16,
+    "elementIndex": 20,
+    "statsId": "g6zt1mux7t",
+    "timestamp": "01:24:54 - 01:26:35",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/g6zt1mux7t"
+  }, {
+    "slug": "challenge-3-solution",
+    "title": "Challenge 3: Solution",
+    "description": "Kent walks through the solution to Challenge 3.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/18-90.jpg",
+    "index": 17,
+    "elementIndex": 21,
+    "statsId": "q4zv4ykol4",
+    "timestamp": "01:26:36 - 01:33:08",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/q4zv4ykol4"
+  }, {
+    "slug": "finding-a-bug",
+    "title": "Finding a Bug",
+    "description": "Kent showcases fixing bugs through writing unit tests for the pre-existing code.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/19-90.jpg",
+    "index": 18,
+    "elementIndex": 23,
+    "statsId": "anfpt3liyb",
+    "timestamp": "01:33:09 - 01:37:05",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/anfpt3liyb"
+  }, {
+    "slug": "missing-avatar-bug",
+    "title": "Missing Avatar Bug",
+    "description": "Kent demonstrates finding and resolving a bug in the conduit application. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/20-90.jpg",
+    "index": 19,
+    "elementIndex": 24,
+    "statsId": "0uk6tvvqzg",
+    "timestamp": "01:37:06 - 01:41:50",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/0uk6tvvqzg"
+  }, {
+    "slug": "challenge-4-test-for-a-newly-found-bug",
+    "title": "Challenge 4: Test for a Newly Found Bug",
+    "description": "In this challenge, students write a test for a newly squashed bug to ensure that the bug does not reappear again.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/21-90.jpg",
+    "index": 20,
+    "elementIndex": 25,
+    "statsId": "hiwxz1t8u1",
+    "timestamp": "01:41:51 - 01:44:38",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/hiwxz1t8u1"
+  }, {
+    "slug": "challenge-4-solution",
+    "title": "Challenge 4: Solution",
+    "description": "Kent walks through the solution to Challenge 4.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/22-90.jpg",
+    "index": 21,
+    "elementIndex": 26,
+    "statsId": "aciexuifvp",
+    "timestamp": "01:44:39 - 01:53:13",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/aciexuifvp"
+  }, {
+    "slug": "introducing-integration-testing",
+    "title": "Introducing Integration Testing",
+    "description": "Kent introduces integration tests, which is when units that have already been tested individual are then combined and tested. Kent then reviews the application used as a learning tool for integration testing.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/23-90.jpg",
+    "index": 22,
+    "elementIndex": 28,
+    "statsId": "va8ik0gqw3",
+    "timestamp": "01:53:14 - 02:00:53",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/va8ik0gqw3"
+  }, {
+    "slug": "setting-up-the-server",
+    "title": "Setting up the Server",
+    "description": "Kent walks through the process of integration testing by first getting the server to start and then stop after runnings its tests. Afterward, Kent takes a question from a student.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/24-90.jpg",
+    "index": 23,
+    "elementIndex": 29,
+    "statsId": "pkvy8wq0qh",
+    "timestamp": "02:00:54 - 02:08:03",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/pkvy8wq0qh"
+  }, {
+    "slug": "using-fake-data",
+    "title": "Using Fake Data",
+    "description": "With the server available for testing, Kent starts building test units by integrating fake, random test data. Kent likes using random test data as a way of revealing bugs that potentially might not other have shown. Kent takes questions from students.\r\n - https://github.com/marak/Faker.js/",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/25-90.jpg",
+    "index": 24,
+    "elementIndex": 30,
+    "statsId": "l78oc5j5re",
+    "timestamp": "02:08:04 - 02:29:49",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/l78oc5j5re"
+  }, {
+    "slug": "async-await",
+    "title": "Async/Await",
+    "description": "Kent shows how to use async/await to refactor the unit test code. Kent takes questions from students.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/26-90.jpg",
+    "index": 25,
+    "elementIndex": 31,
+    "statsId": "378goqg3jc",
+    "timestamp": "02:29:50 - 02:44:50",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/378goqg3jc"
+  }, {
+    "slug": "challenge-5-integration-testing",
+    "title": "Challenge 5: Integration Testing",
+    "description": "In this challenge, students create both an integration testing environment and develop unit tests.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/27-90.jpg",
+    "index": 26,
+    "elementIndex": 32,
+    "statsId": "zdde9fluqd",
+    "timestamp": "02:44:51 - 02:50:16",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/zdde9fluqd"
+  }, {
+    "slug": "challenge-5-solution",
+    "title": "Challenge 5: Solution",
+    "description": "Kent walks through the solution to Challenge 5 and takes questions from students.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/28-90.jpg",
+    "index": 27,
+    "elementIndex": 33,
+    "statsId": "79l52i56qj",
+    "timestamp": "02:50:17 - 03:09:58",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/79l52i56qj"
+  }, {
+    "slug": "authentication",
+    "title": "Authentication",
+    "description": "Kent sets up authenticated requests with a username and password as a way to demonstrate end-to-end testing.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/29-90.jpg",
+    "index": 28,
+    "elementIndex": 35,
+    "statsId": "x6s808z8gg",
+    "timestamp": "03:09:59 - 03:24:26",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/x6s808z8gg"
+  }, {
+    "slug": "client-side-testing",
+    "title": "Client-side Testing",
+    "description": "Kent builds and demonstrates client-side testing with React. \r\n - https://github.com/airbnb/enzyme",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/30-90.jpg",
+    "index": 29,
+    "elementIndex": 36,
+    "statsId": "30c4sl4f74",
+    "timestamp": "03:24:27 - 03:46:13",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/30c4sl4f74"
+  }, {
+    "slug": "snapshot-testing",
+    "title": "Snapshot Testing",
+    "description": "Kent shows how to use snapshot testing, which is a way to test your UI component without writing actual test cases. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/31-90.jpg",
+    "index": 30,
+    "elementIndex": 37,
+    "statsId": "w6c0q3w2ee",
+    "timestamp": "03:46:14 - 04:05:09",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/w6c0q3w2ee"
+  }, {
+    "slug": "visual-regression-testing-questions",
+    "title": "Visual Regression Testing Questions",
+    "description": "Kent answers a question about visual regression testing from a student.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/32-90.jpg",
+    "index": 31,
+    "elementIndex": 38,
+    "statsId": "x9lskbownb",
+    "timestamp": "04:05:10 - 04:09:06",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/x9lskbownb"
+  }, {
+    "slug": "simulate-event-testing",
+    "title": "Simulate Event Testing",
+    "description": "To create how a user might interact with an applications UI, Kent demonstrates how to build simulate event testing environment.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/33-90.jpg",
+    "index": 32,
+    "elementIndex": 39,
+    "statsId": "d6283q2az8",
+    "timestamp": "04:09:07 - 04:21:03",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/d6283q2az8"
+  }, {
+    "slug": "challenge-6-testing-the-editor",
+    "title": "Challenge 6: Testing the Editor",
+    "description": "In this challenge, students create a simulated environment in order an online editor.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/34-90.jpg",
+    "index": 33,
+    "elementIndex": 40,
+    "statsId": "vv52opdga1",
+    "timestamp": "04:21:04 - 04:24:02",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/vv52opdga1"
+  }, {
+    "slug": "challenge-6-solution",
+    "title": "Challenge 6: Solution",
+    "description": "Kent walks through the solution to Challenge 6 and takes questions from students.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/35-90.jpg",
+    "index": 34,
+    "elementIndex": 41,
+    "statsId": "uqhkvdrz9t",
+    "timestamp": "04:24:03 - 04:34:31",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/uqhkvdrz9t"
+  }, {
+    "slug": "testing-routes",
+    "title": "Testing Routes",
+    "description": "Kent shows how to set up a testing for routes, making sure a browser moves from page to page as intended. Then Kent answers student questions and shows Challenge 7 that students can work on in their own time.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/36-90.jpg",
+    "index": 35,
+    "elementIndex": 42,
+    "statsId": "u5bneonsv6",
+    "timestamp": "04:34:32 - 04:54:04",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/u5bneonsv6"
+  }, {
+    "slug": "introducing-end-to-end-testing",
+    "title": "Introducing End-to-End Testing",
+    "description": "While introduces end-to-end testing, Kent demonstrates Cypress, a testing utility. \r\n - https://www.cypress.io/\r\n\r\nIf Cypress has a waitlist for signing-up, you can download it directly and use it without registering: https://docs.cypress.io/docs/installing-and-running#section-direct-download",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/37-90.jpg",
+    "index": 36,
+    "elementIndex": 44,
+    "statsId": "7pgtj9viq3",
+    "timestamp": "04:54:05 - 05:05:36",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/7pgtj9viq3"
+  }, {
+    "slug": "cypress-tradeoffs",
+    "title": "Cypress Tradeoffs",
+    "description": "While Cypress has a lot advantages over Selenium, Kent discusses the tradeoffs with using Cypress.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/38-90.jpg",
+    "index": 37,
+    "elementIndex": 45,
+    "statsId": "p2ajd7k5nm",
+    "timestamp": "05:05:37 - 05:09:18",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/p2ajd7k5nm"
+  }, {
+    "slug": "setting-up-cypress-tests",
+    "title": "Setting up Cypress Tests",
+    "description": "Kent shows tests written using Cypress utility application. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/39-90.jpg",
+    "index": 38,
+    "elementIndex": 46,
+    "statsId": "dr54jjzeby",
+    "timestamp": "05:09:19 - 05:19:44",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/dr54jjzeby"
+  }, {
+    "slug": "challenge-7-cypress-testing",
+    "title": "Challenge 7: Cypress Testing",
+    "description": "In this challenge, students set tests within Cypress. ",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/40-90.jpg",
+    "index": 39,
+    "elementIndex": 47,
+    "statsId": "81gcpwxt87",
+    "timestamp": "05:19:45 - 05:21:14",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/81gcpwxt87"
+  }, {
+    "slug": "wrapping-up",
+    "title": "Wrapping Up",
+    "description": "Kent wraps up the Testing JavaScript Applications and thanks to the class.",
+    "thumbnail": "https://static.frontendmasters.com/thumb/savage-a/2017/06/20/41-90.jpg",
+    "index": 40,
+    "elementIndex": 49,
+    "statsId": "zhy2j2tt2z",
+    "timestamp": "05:21:15 - 05:22:54",
+    "sourceBase": "https://api.frontendmasters.com/v1/kabuki/video/zhy2j2tt2z"
+  }],
+  "lessonElements": ["Testing JavaScript Applications", 0, 1, 2, 3, 4, 5, "Jest", 6, 7, 8, 9, "Writing Unit Tests", 10, 11, 12, 13, "Test-driven Development", 14, 15, 16, 17, "Fixing Bugs", 18, 19, 20, 21, "Integration Tests", 22, 23, 24, 25, 26, 27, "Unit Integration for Client and Server", 28, 29, 30, 31, 32, 33, 34, 35, "End-to-End Testing", 36, 37, 38, 39, "Wrapping Up Testing JavaScript Applications", 40],
+  "isTrial": true,
+  "hasTranscript": false,
+  "hasIntroLoop": false,
+  "hasWebVTT": false
+}

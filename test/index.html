@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js'></script>
-  <script src='../node_modules/moment/moment.js'>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js'></script> -->
+  <!-- <script src='../node_modules/moment/moment.js'> -->
 
-  </script>
-  <script src='../src/utils/support.js'>new Regex()</script>
+  <!-- </script> -->
+  <!-- <script src='../src/utils/support.js'>new Regex()</script> -->
 
 </head>
 <body>
@@ -15,6 +15,45 @@
     I am some inner html
   </div>
   <!-- <script src='../src/dots/fp/tupperware.js'></script> -->
-  <script src='../src/dots/fp/applicativeFunctor.js'></script>
+  <!-- <script src='../src/dots/fp/applicativeFunctor.js'></script> -->
+  <script>
+    
+let arr =  [
+  { title: '一', name: 'liu' }, 
+  {title: '一' , name: 'huan' }, 
+  {title: '二', name: 'chen' }, 
+  {title: '二', name: 'chen' }, 
+  {title: '四', name: 'ruo' }, 
+  {title: '四', name: 'en' }, 
+  {title: '三', name: 'ba' }, 
+  {title: '三', name: 'ba' }
+];
+
+const classify = arrs => {
+  // return arrs.reduce((prev, cur) => (prev[cur.title]++ || (prev[cur.title] = 1), prev), {});
+  return arrs.reduce((p, c) => {
+    if(p && p.length > 0){
+      let same = false, idx = 0;
+      p.map( (item, index) => {
+        same = item[0].title === c.title;
+        if(same){
+          idx = index;
+        }
+      })
+      if(same){
+        p[idx].push(c);
+      }else {
+        p.push(Array(1).fill().map(_ => c));
+      }
+    }else {
+      p.push(Array(1).fill().map(_ => c));
+    }
+    return p;
+  }, []);
+}
+
+
+console.log(classify(arr));
+  </script>
 </body>
 </html>
