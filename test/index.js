@@ -146,22 +146,22 @@ const _getSeat = p => p.downseatextra[p.seatNo];
 //   return result.reduce((prev, cur) => prev + parseInt(cur.price), 0);
 // }
 
-const add = (a, b) => parseInt(a) + parseInt(b);
-// const sumPrice = arr.reduce( (p, c) => parseInt(c) + p, 0);
+// const add = (a, b) => parseInt(a) + parseInt(b);
+// // const sumPrice = arr.reduce( (p, c) => parseInt(c) + p, 0);
 
-const orderTotalPrice = pipe(
-  _map(_getSeatPrice),
-  reduce(add, 0)
-);
-
-
+// const orderTotalPrice = pipe(
+//   _map(_getSeatPrice),
+//   reduce(add, 0)
+// );
 
 
 
-// seatNoInfo([{seatNo: '34A'}, {seatNo: undefined}]).then( res => console.log(res))
-console.log(orderTotalPrice( [{seatNo: '34A', downseatextra: {"34A" : { price: '500' }}}, 
-                         {seatNo: '35P', downseatextra: {"35P" : {  }}},
-                         {seatNo: '34L', downseatextra: {"34L" : { price: '500' }}}]));
+
+
+// // seatNoInfo([{seatNo: '34A'}, {seatNo: undefined}]).then( res => console.log(res))
+// console.log(orderTotalPrice( [{seatNo: '34A', downseatextra: {"34A" : { price: '500' }}}, 
+//                          {seatNo: '35P', downseatextra: {"35P" : {  }}},
+//                          {seatNo: '34L', downseatextra: {"34L" : { price: '500' }}}]));
 
 
 
@@ -214,3 +214,19 @@ console.log(orderTotalPrice( [{seatNo: '34A', downseatextra: {"34A" : { price: '
 // }
 
 // console.log(classify(arr));
+
+
+const defaultEmptyStr = arg => !!arg ? arg : "";
+
+const getValOfObjbyKeyDefaultEmptyStr = key => obj => obj[key]
+
+const aa = id => pipe(
+  getValOfObjbyKeyDefaultEmptyStr(id),
+  defaultEmptyStr
+)
+
+
+var a = [{id:1}, {id:1}, {name:'liu'}];
+
+console.log(
+  a.map(aa('id')));

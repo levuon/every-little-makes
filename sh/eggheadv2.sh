@@ -7,8 +7,10 @@
 readonly HOST_API='https://egghead.io/api/v1/lessons/'
 NAME_JSON=""
 
-#FAILED
-FAIL_ARRAY=()
+ms4CDN='https://d2c5owlt6rorc3.cloudfront.net/'
+
+# https://d2c5owlt6rorc3.cloudfront.net/react-setup-react-native-video-for-ios-and-android-77441a57b5/video/480p/seg_1.m4s
+# https://d2c5owlt6rorc3.cloudfront.net/react-use-local-files-or-remote-video-files-with-react-native-video-2075d2b590/video/480p/seg_1.m4s
 
 read -p "please input vedoi url >>  " URL
 Echo_Yellow "INPUPT URL: $URL"
@@ -22,9 +24,6 @@ Echo_Yellow "INPUPT URL: $URL"
 # method 2
 COURSE=`echo $URL | rev | cut -d / -f 1 | rev`
 
-function slash() {
-  echo $1 | rev | cut -d / -f 1 | rev
-}
 
 
 echo "course_name: $COURSE"
@@ -37,7 +36,7 @@ echo "***********************************************************"
 # get mu38 json url
 # DATA=($(curl -s $HOST_API$LESSON/next_up | jq '.list.lessons | .[].media_urls.wistia_url'))
 # DATA=($(curl -s $HOST_API$COURSE/next_up | jq '.list.lessons | [.[] | { url: .media_urls.wistia_url, name: .slug } ]'))
-DATA=($(curl -s $HOST_API$COURSE/next_up | jq '.list.lessons | [.[] | { url: .media_urls.wistia_url, name: .slug, jsonId: .wistia_id } ]'))
+DATA=($(curl -s $HOST_API$COURSE/next_up | jq '.list.lessons | [.[] | { url: .media_urls.hls_url, name: .slug, jsonId: .wistia_id } ]'))
 
 
 LESSON=`echo ${DATA[*]} | jq '.[] | .name'`

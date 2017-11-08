@@ -1,4 +1,4 @@
-
+const R = require('ramda');
 // 检验质数
 function isPrime( n ) {
 	return !(/^.?$|^(..+?)\1+$/).test( '1'.repeat( n ) )
@@ -48,11 +48,32 @@ function inherits(ctor, superCtor) {
   Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
 }
 
+
+
+function timeout(sec) {
+  return function(target, key, descriptor) {
+    var originalMethod = descriptor.value;
+    descriptor.value = function(...arg) {
+      setTimeout(() => {
+        originalMethod.apply(this, args);
+      }, sec);
+    }
+  }
+}
+
+
+
+const log = R.curry(function log(msg, val) {
+  console.log.call(null, msg, val);
+});
+
 module.exports = {
     isPrime,
     randomColor,
     after,
 		once,
     excuteTimes,
-    inherits
+    inherits,
+    timeout,
+    log
 }

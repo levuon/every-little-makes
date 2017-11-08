@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../analysis/rx.js"></script>
+</head>
+
+<body>
+  <div>
+    <button id='red'>Red</button>
+    <button id='black'>Black</button>
+  </div>
+  <div id="redTotal"></div>
+  <div id="blackTotal"></div>
+  <div id="total"></div>
+  <script>
+    const setHtml = id => val => document.getElementById(id).innerHTML = val;
+
+    const addOneClick$ = id => Rx.Observable
+      .fromEvent(document.getElementById(id), 'click')
+      // 将每次点击映射成1
+      .mapTo(1)
+      .startWith(0)
+      // 追踪运行中的总数
+      .scan((acc, curr) => acc + curr)
+      // 为适当的元素设置 HTML
+      .do(setHtml(`${id}Total`))
+
+
+    const combineTotal$ = Rx.Observable
+      .combineLatest(
+        addOneClick$('red'),
+        addOneClick$('black')
+      )
+      .map(([val1, val2]) => val1 + val2)
+      .subscribe(setHtml('total'));
+  </script>
+</body>
+
+</html>

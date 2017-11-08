@@ -1,6 +1,3 @@
-
-
-
 const composeFn = (...fns) => params => fns.reduce((p, n) => n(p), params)
 
 const composePromise = ( ...fns ) => params => fns.reduce( ( p, n ) => p.then( result => n( result ) ) , Promise.resolve( params ) );

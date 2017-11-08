@@ -26,7 +26,7 @@ const getServerStuff = function(callback){
 };
 // 等价于：
 // GOOD:
-const getServerStuff = ajaxCall
+// const getServerStuff = ajaxCall
 
 
 // ################## 快速访问对象属性 ##################

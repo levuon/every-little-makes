@@ -1,4 +1,5 @@
 
+$shPath: ''
 
 welcome:
 	@printf "\033[36m     \n"
@@ -9,7 +10,7 @@ welcome:
 	@printf "\033[36m     \n"
 	@printf "\033[m\n"
 
-run: welcome install
+run: welcome install clean
 
 show:
 	echo $PID $NODE_BIN
@@ -20,4 +21,6 @@ install:
 
 
 clean:
-	rm -rf 
+	@rm -rf ./built
+
+  

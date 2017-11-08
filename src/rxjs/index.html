@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../analysis/rxjs.js"></script>
+</head>
+
+<body>
+  <div id="pure">pure</div>
+  <div id="count">count</div>
+  <button>button</button>
+  <script>
+    var pure = document.getElementById('pure');
+    var count = document.getElementById('count');
+    Rx.Observable.fromEvent(pure, 'click')
+      .subscribe(() => console.log('Clicked!'));
+
+    Rx.Observable.fromEvent(count, 'click')
+      .scan(val => val + 1, 0)
+      .subscribe(val => console.log(`Clicked ${val} times`));
+
+
+    var button = document.querySelector('button');
+    Rx.Observable.fromEvent(button, 'click')
+      .throttleTime(1000)
+      .scan(count => count + 1, 0)
+      .subscribe(count => console.log(`Clicked ${count} times`));
+
+    Rx.Observable.fromEvent(button, 'click')
+      .throttleTime(1000)
+      .map(event => event.clientX)
+      .scan((count, clientX) => count + clientX, 0)
+      .subscribe(count => console.log(count)); 
+  </script>
+</body>
+
+</html>
