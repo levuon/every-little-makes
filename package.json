@@ -7,6 +7,7 @@
     "accounting": "^0.4.1",
     "bluebird": "^3.5.0",
     "co": "^4.6.0",
+    "crocks": "^0.8.4",
     "data.task": "^3.1.1",
     "hls-buffer": "^0.1.5",
     "lodash": "^4.17.4",

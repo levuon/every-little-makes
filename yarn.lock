@@ -773,6 +773,10 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
+crocks@^0.8.4:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/crocks/-/crocks-0.8.4.tgz#0bfff283e418dac42f202e8704e8f0de12f87e95"
+
 cryptiles@0.2.x:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-0.2.2.tgz#ed91ff1f17ad13d3748288594f8a48a0d26f325c"

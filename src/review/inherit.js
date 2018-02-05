@@ -84,13 +84,13 @@ function Super3(){
 Super3.prototype.fun1 = function() {}
 Super3.prototype.fun2 = function() {}
 
-function Sub4(){
+function Sub3(){
   Super3.call(this);   // 核心
   // ...
 }
-Sub4.prototype = new Super();    // 核心
-var sub1 = new Sub4(1);
-var sub2 = new Sub4(2);
+Sub3.prototype = new Super();    // 核心
+var sub1 = new Sub3(1);
+var sub2 = new Sub3(2);
 log(sub1.fun === sub2.fun);   // true
 
 
@@ -115,7 +115,7 @@ function Super4(){
 Super4.prototype.fun1 = function(){};
 Super4.prototype.fun2 = function(){};
 
-function Sub(){
+function Sub4(){
   Super.call(this);   // 核心
   // ...
 }
