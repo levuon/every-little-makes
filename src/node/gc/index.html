@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body onload="SetupLeak()">
+  <div id="LeakedDiv"></div>
+  <script>
+    var myGlobalObject;
+
+    function SetupLeak() {
+      //  First set up the script scope to element reference
+      myGlobalObject = document.getElementById("LeakedDiv");
+      //  Next set up the element to script scope reference
+      document.getElementById("LeakedDiv").expandoProperty = myGlobalObject;
+    }
+  </script>
+</body>
+
+</html>
